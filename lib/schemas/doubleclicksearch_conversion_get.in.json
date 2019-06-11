@@ -1,0 +1,51 @@
+{
+    "type": "object",
+    "properties": {
+        "adGroupId": {
+            "type": "string"
+        },
+        "adId": {
+            "type": "string"
+        },
+        "advertiserId": {
+            "required": true,
+            "type": "string"
+        },
+        "agencyId": {
+            "required": true,
+            "type": "string"
+        },
+        "campaignId": {
+            "type": "string"
+        },
+        "criterionId": {
+            "type": "string"
+        },
+        "endDate": {
+            "required": true,
+            "type": "integer",
+            "minimum": 20091101,
+            "maximum": 99991231
+        },
+        "engineAccountId": {
+            "required": true,
+            "type": "string"
+        },
+        "rowCount": {
+            "required": true,
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000
+        },
+        "startDate": {
+            "required": true,
+            "type": "integer",
+            "minimum": 20091101,
+            "maximum": 99991231
+        },
+        "startRow": {
+            "required": true,
+            "type": "integer"
+        }
+    }
+}

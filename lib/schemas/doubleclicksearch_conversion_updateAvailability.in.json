@@ -1,0 +1,75 @@
+{
+    "type": "object",
+    "properties": {
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json"
+            ],
+            "default": "json"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "The request to update availability.",
+            "properties": {
+                "availabilities": {
+                    "description": "The availabilities being requested.",
+                    "items": {
+                        "description": "A message containing availability data relevant to DoubleClick Search.",
+                        "properties": {
+                            "advertiserId": {
+                                "description": "DS advertiser ID.",
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "agencyId": {
+                                "description": "DS agency ID.",
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "availabilityTimestamp": {
+                                "description": "The time by which all conversions have been uploaded, in epoch millis UTC.",
+                                "format": "uint64",
+                                "type": "string"
+                            },
+                            "segmentationId": {
+                                "description": "The numeric segmentation identifier (for example, DoubleClick Search Floodlight activity ID).",
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "segmentationName": {
+                                "description": "The friendly segmentation identifier (for example, DoubleClick Search Floodlight activity name).",
+                                "type": "string"
+                            },
+                            "segmentationType": {
+                                "description": "The segmentation type that this availability is for (its default value is FLOODLIGHT).",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

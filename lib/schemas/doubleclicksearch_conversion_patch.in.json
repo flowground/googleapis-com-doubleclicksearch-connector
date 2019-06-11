@@ -1,0 +1,237 @@
+{
+    "type": "object",
+    "properties": {
+        "advertiserId": {
+            "required": true,
+            "type": "string"
+        },
+        "agencyId": {
+            "required": true,
+            "type": "string"
+        },
+        "endDate": {
+            "required": true,
+            "type": "integer",
+            "minimum": 20091101,
+            "maximum": 99991231
+        },
+        "engineAccountId": {
+            "required": true,
+            "type": "string"
+        },
+        "rowCount": {
+            "required": true,
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000
+        },
+        "startDate": {
+            "required": true,
+            "type": "integer",
+            "minimum": 20091101,
+            "maximum": 99991231
+        },
+        "startRow": {
+            "required": true,
+            "type": "integer"
+        },
+        "requestBody": {
+            "description": "A list of conversions.",
+            "properties": {
+                "conversion": {
+                    "description": "The conversions being requested.",
+                    "items": {
+                        "description": "A conversion containing data relevant to DoubleClick Search.",
+                        "properties": {
+                            "adGroupId": {
+                                "description": "DS ad group ID.",
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "adId": {
+                                "description": "DS ad ID.",
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "advertiserId": {
+                                "description": "DS advertiser ID.",
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "agencyId": {
+                                "description": "DS agency ID.",
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "attributionModel": {
+                                "description": "Available to advertisers only after contacting DoubleClick Search customer support.",
+                                "type": "string"
+                            },
+                            "campaignId": {
+                                "description": "DS campaign ID.",
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "channel": {
+                                "description": "Sales channel for the product. Acceptable values are:  \n- \"local\": a physical store \n- \"online\": an online store",
+                                "type": "string"
+                            },
+                            "clickId": {
+                                "description": "DS click ID for the conversion.",
+                                "type": "string"
+                            },
+                            "conversionId": {
+                                "description": "For offline conversions, advertisers provide this ID. Advertisers can specify any ID that is meaningful to them. Each conversion in a request must specify a unique ID, and the combination of ID and timestamp must be unique amongst all conversions within the advertiser.\nFor online conversions, DS copies the dsConversionId or floodlightOrderId into this property depending on the advertiser's Floodlight instructions.",
+                                "type": "string"
+                            },
+                            "conversionModifiedTimestamp": {
+                                "description": "The time at which the conversion was last modified, in epoch millis UTC.",
+                                "format": "uint64",
+                                "type": "string"
+                            },
+                            "conversionTimestamp": {
+                                "description": "The time at which the conversion took place, in epoch millis UTC.",
+                                "format": "uint64",
+                                "type": "string"
+                            },
+                            "countMillis": {
+                                "description": "Available to advertisers only after contacting DoubleClick Search customer support.",
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "criterionId": {
+                                "description": "DS criterion (keyword) ID.",
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "currencyCode": {
+                                "description": "The currency code for the conversion's revenue. Should be in ISO 4217 alphabetic (3-char) format.",
+                                "type": "string"
+                            },
+                            "customDimension": {
+                                "description": "Custom dimensions for the conversion, which can be used to filter data in a report.",
+                                "items": {
+                                    "description": "A message containing the custome dimension.",
+                                    "properties": {
+                                        "name": {
+                                            "description": "Custom dimension name.",
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "description": "Custom dimension value.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "customMetric": {
+                                "description": "Custom metrics for the conversion.",
+                                "items": {
+                                    "description": "A message containing the custome metric.",
+                                    "properties": {
+                                        "name": {
+                                            "description": "Custom metric name.",
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "description": "Custom metric numeric value.",
+                                            "format": "double",
+                                            "type": "number"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "deviceType": {
+                                "description": "The type of device on which the conversion occurred.",
+                                "type": "string"
+                            },
+                            "dsConversionId": {
+                                "description": "ID that DoubleClick Search generates for each conversion.",
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "engineAccountId": {
+                                "description": "DS engine account ID.",
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "floodlightOrderId": {
+                                "description": "The Floodlight order ID provided by the advertiser for the conversion.",
+                                "type": "string"
+                            },
+                            "inventoryAccountId": {
+                                "description": "ID that DS generates and uses to uniquely identify the inventory account that contains the product.",
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "productCountry": {
+                                "description": "The country registered for the Merchant Center feed that contains the product. Use an ISO 3166 code to specify a country.",
+                                "type": "string"
+                            },
+                            "productGroupId": {
+                                "description": "DS product group ID.",
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "productId": {
+                                "description": "The product ID (SKU).",
+                                "type": "string"
+                            },
+                            "productLanguage": {
+                                "description": "The language registered for the Merchant Center feed that contains the product. Use an ISO 639 code to specify a language.",
+                                "type": "string"
+                            },
+                            "quantityMillis": {
+                                "description": "The quantity of this conversion, in millis.",
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "revenueMicros": {
+                                "description": "The revenue amount of this TRANSACTION conversion, in micros (value multiplied by 1000000, no decimal). For example, to specify a revenue value of \"10\" enter \"10000000\" (10 million) in your request.",
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "segmentationId": {
+                                "description": "The numeric segmentation identifier (for example, DoubleClick Search Floodlight activity ID).",
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "segmentationName": {
+                                "description": "The friendly segmentation identifier (for example, DoubleClick Search Floodlight activity name).",
+                                "type": "string"
+                            },
+                            "segmentationType": {
+                                "description": "The segmentation type of this conversion (for example, FLOODLIGHT).",
+                                "type": "string"
+                            },
+                            "state": {
+                                "description": "The state of the conversion, that is, either ACTIVE or REMOVED. Note: state DELETED is deprecated.",
+                                "type": "string"
+                            },
+                            "storeId": {
+                                "description": "The ID of the local store for which the product was advertised. Applicable only when the channel is \"local\".",
+                                "type": "string"
+                            },
+                            "type": {
+                                "description": "The type of the conversion, that is, either ACTION or TRANSACTION. An ACTION conversion is an action by the user that has no monetarily quantifiable value, while a TRANSACTION conversion is an action that does have a monetarily quantifiable value. Examples are email list signups (ACTION) versus ecommerce purchases (TRANSACTION).",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "kind": {
+                    "default": "doubleclicksearch#conversionList",
+                    "description": "Identifies this as a ConversionList resource. Value: the fixed string doubleclicksearch#conversionList.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,224 @@
+{
+    "title": "DoubleClick Search",
+    "description": "Reports and modifies your advertising data in DoubleClick Search (for example, campaigns, ad groups, keywords, and conversions).",
+    "docsUrl": "https://developers.google.com/doubleclick-search/",
+    "url": "https://api.apis.guru/v2/specs/googleapis.com/doubleclicksearch/v2/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://www.googleapis.com/doubleclicksearch/v2",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "oauth2": {
+                "label": "Oauth 2.0 authentication",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+            "token_uri": "https://www.googleapis.com/oauth2/v4/token",
+            "scopes": [
+                "https://www.googleapis.com/auth/doubleclicksearch"
+            ]
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "doubleclicksearch_conversion_get": {
+            "main": "./lib/actions/doubleclicksearch_conversion_get.js",
+            "title": "Retrieves a list of conversions from a DoubleClick Search engine account.",
+            "description": "Retrieves a list of conversions from a DoubleClick Search engine account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/doubleclicksearch_conversion_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "doubleclicksearch_savedColumns_list": {
+            "main": "./lib/actions/doubleclicksearch_savedColumns_list.js",
+            "title": "Retrieve the list of saved columns for a specified advertiser.",
+            "description": "Retrieve the list of saved columns for a specified advertiser.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/doubleclicksearch_savedColumns_list.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "doubleclicksearch_conversion_patch": {
+            "main": "./lib/actions/doubleclicksearch_conversion_patch.js",
+            "title": "Updates a batch of conversions in DoubleClick Search. This method supports patch semantics.",
+            "description": "Updates a batch of conversions in DoubleClick Search. This method supports patch semantics.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/doubleclicksearch_conversion_patch.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "doubleclicksearch_conversion_insert": {
+            "main": "./lib/actions/doubleclicksearch_conversion_insert.js",
+            "title": "Inserts a batch of new conversions into DoubleClick Search.",
+            "description": "Inserts a batch of new conversions into DoubleClick Search.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/doubleclicksearch_conversion_insert.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "doubleclicksearch_conversion_update": {
+            "main": "./lib/actions/doubleclicksearch_conversion_update.js",
+            "title": "Updates a batch of conversions in DoubleClick Search.",
+            "description": "Updates a batch of conversions in DoubleClick Search.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/doubleclicksearch_conversion_update.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "doubleclicksearch_conversion_updateAvailability": {
+            "main": "./lib/actions/doubleclicksearch_conversion_updateAvailability.js",
+            "title": "Updates the availabilities of a batch of floodlight activities in DoubleClick Search.",
+            "description": "Updates the availabilities of a batch of floodlight activities in DoubleClick Search.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/doubleclicksearch_conversion_updateAvailability.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "doubleclicksearch_reports_request": {
+            "main": "./lib/actions/doubleclicksearch_reports_request.js",
+            "title": "Inserts a report request into the reporting system.",
+            "description": "Inserts a report request into the reporting system.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/doubleclicksearch_reports_request.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "doubleclicksearch_reports_generate": {
+            "main": "./lib/actions/doubleclicksearch_reports_generate.js",
+            "title": "Generates and returns a report immediately.",
+            "description": "Generates and returns a report immediately.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/doubleclicksearch_reports_generate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "doubleclicksearch_reports_get": {
+            "main": "./lib/actions/doubleclicksearch_reports_get.js",
+            "title": "Polls for the status of a report request.",
+            "description": "Polls for the status of a report request.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/doubleclicksearch_reports_get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "doubleclicksearch_reports_getFile": {
+            "main": "./lib/actions/doubleclicksearch_reports_getFile.js",
+            "title": "Downloads a report file encoded in UTF-8.",
+            "description": "Downloads a report file encoded in UTF-8.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/doubleclicksearch_reports_getFile.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}
